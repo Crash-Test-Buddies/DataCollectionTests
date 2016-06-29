@@ -1,0 +1,4 @@
+1.) Build the test class file in this package, implementing the DataTest interface
+2.) Add the tests display name to the bottom of the res.values.testsList.xml array
+3.) Add the test to the bottom of the TestBuilder switch statement
+4.) Try running the test to ensure correct operation
