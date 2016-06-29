@@ -16,35 +16,35 @@ public class DBParcelable implements Parcelable {
         this.step = step;
     }
 
-    public int getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(int startTime) {
+    public void setStartTime(long startTime) {
         this.startTime = startTime;
     }
 
     private String step; // Step the run is performed for
-    private int startTime; // Start time of step
+    private long startTime; // Start time of step
 
-    public int getEndTime() {
+    public long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(int endTime) {
+    public void setEndTime(long endTime) {
         this.endTime = endTime;
     }
 
-    private int endTime; // End time of step
+    private long endTime; // End time of step
 
-    public DBParcelable(String step, int startTime, int endTime){
+    public DBParcelable(String step, long startTime, long endTime){
         this.step = step;
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
     /**
-     * Object is receive through intent as String array so this will
+     * Object is receive through longent as String array so this will
      * create the object from that String array
      * @param in
      */
@@ -52,8 +52,8 @@ public class DBParcelable implements Parcelable {
         String[] data = new String[3];
         in.readStringArray(data);
         this.step = data[0];
-        this.startTime = Integer.parseInt(data[1]);
-        this.endTime = Integer.parseInt(data[2]);
+        this.startTime = Long.parseLong(data[1]);
+        this.endTime = Long.parseLong(data[2]);
     }
 
     /**
@@ -77,7 +77,7 @@ public class DBParcelable implements Parcelable {
     }
 
     /**
-     * Write the object to a String array so it can be sent through an Intent
+     * Write the object to a String array so it can be sent through an longent
      * @param dest
      * @param flags
      */
@@ -85,8 +85,8 @@ public class DBParcelable implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeStringArray(new String[] {
                 this.step
-                ,Integer.toString(this.startTime)
-                ,Integer.toString(this.endTime)
+                ,Long.toString(this.startTime)
+                ,Long.toString(this.endTime)
         });
 
     }

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void executeTest(int numRuns){
         int testNum = testPicker.getSelectedItemPosition() + 1;
-        DataTest theTest = testBuilder.buildTest(testNum);
+        DataTest theTest = testBuilder.buildTest(testNum, this);
         for (int i = 0; i < numRuns; i++){
             theTest.run();
         }

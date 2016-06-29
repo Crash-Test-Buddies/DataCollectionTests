@@ -1,12 +1,98 @@
 package rit.se.crashavoidance.datacollectiontests.dataTests;
 
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
+
+import java.sql.Timestamp;
+import java.util.Date;
+
+import edu.rit.se.wifibuddy.WifiDirectHandler;
+import rit.se.crashavoidance.datacollectiontests.service.DBParcelable;
+
 /**
  * Created by Dan on 6/28/2016.
  */
 public class DiscoverServicesTest implements DataTest {
+    private ServiceConnection wifiConnection;
+    WifiDirectHandler wifiDirectHandler;
+    BroadcastReceiver receiver;
+    Context context;
+    final String stepName = "DiscoverService";
+    long startTime;
+    long endTime;
+    public DiscoverServicesTest(Context context){
+        this.context = context;
+        wifiConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                WifiDirectHandler.WifiTesterBinder binder = (WifiDirectHandler.WifiTesterBinder) service;
+                wifiDirectHandler = binder.getService();
+                // Test calls must go in here
+                startTime = new Date().getTime();
+                wifiDirectHandler.continuouslyDiscoverServices();
+                Log.i("Tester", " Device info: " + wifiDirectHandler.getThisDeviceInfo());
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                Log.i("Tester", "Disconnected??? whyyyyy");
+            }
+        };
+
+    }
 
     public void run(){
-        System.out.println("DISCOVER SERVICES TEST");
+        Log.i("Tester", "Like ah, starting the test");
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE);
+        receiver = new BroadcastReceiver() {
+            // We only need to listen for one intent
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                // We only need to listen for one intent
+                endTime = new Date().getTime();
+                wifiDirectHandler.stopDiscoveringServices();
+                context.unbindService(wifiConnection);
+                Log.i("Tester", "Like ah, totally sending the parcelable");
+                Log.i("Tester", "longeger");
+                DBParcelable parcelable = new DBParcelable(stepName, startTime, endTime);
+                Intent i = new Intent();
+                i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
+                i.putExtra("record", parcelable);
+                ComponentName c = context.startService(i);
+                LocalBroadcastManager.getInstance(context).unregisterReceiver(this);
+            }
+        };
+        LocalBroadcastManager.getInstance(context).registerReceiver(receiver, filter);
+        /* This binds to the service, which calls continuouslyDiscoverServices
+           It needs to be done this way because the call is asynchronous so the logic needs
+           to be in the callback */
+        Log.i("Tester", "Binding to the service");
+        context.bindService(new Intent(context, WifiDirectHandler.class), wifiConnection, Context.BIND_AUTO_CREATE);
+        Log.i("Tester", "Ran...oh noooooo what happened???");
+        while (wifiDirectHandler == null){
+            try {
+                Thread.sleep(5000);
+                Log.i("Tester", "It's null, sleeping");
+            } catch (InterruptedException e) {
+                Log.e("Tester", "Oops", e);
+            }
+        }
+
     }
+
+
+
+
+
+
+
 
 }
