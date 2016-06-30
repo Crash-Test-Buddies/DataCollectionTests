@@ -133,3 +133,42 @@
 06-30 15:18:07.537 19002-19002/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
                                                                                    1467314285946
                                                                                    1467314287549
+06-30 15:56:50.216 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316608568
+                                                                                 1467316610217
+06-30 15:56:51.786 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316610233
+                                                                                 1467316611791
+06-30 15:56:53.256 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316611803
+                                                                                 1467316613266
+06-30 15:56:54.806 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316613273
+                                                                                 1467316614814
+06-30 15:56:56.356 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316614830
+                                                                                 1467316616367
+06-30 15:56:57.846 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316616381
+                                                                                 1467316617858
+06-30 15:56:59.706 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316617872
+                                                                                 1467316619716
+06-30 15:57:01.256 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316619725
+                                                                                 1467316621268
+06-30 15:58:42.776 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316621284
+                                                                                 1467316722786
+06-30 15:58:44.306 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316722802
+                                                                                 1467316724312
+06-30 15:58:45.936 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316724330
+                                                                                 1467316725943
+06-30 15:58:47.416 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316725950
+                                                                                 1467316727428
+06-30 15:58:49.016 7641-7641/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1467316727435
+                                                                                 1467316729032

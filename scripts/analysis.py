@@ -1,5 +1,6 @@
 import argparse
 import re
+import io
 
 
 def main():
@@ -11,14 +12,22 @@ def main():
 def analyze(file_name):
     f = open(file_name)
     data = collect_data(f)
-    for key, val in data.items():
-        print("STEP: " + key)
-        print("iterations: " + str(len(val)))
+    with open("output.csv", "w") as output:
+        output.write("step,start,end\n")
+        for key, val in data.items():
+            print("STEP: " + key)
+            print("iterations: " + str(len(val)))
 
-        times = list(map(lambda time: time[1] - time[0], val))
-        print("min: " + str(min(times)))
-        print("max: " + str(max(times)))
-        print("avg: " + str(sum(times) / len(times)))
+            times = list(map(lambda time: time[1] - time[0], val))
+            print("min: " + str(min(times)))
+            print("max: " + str(max(times)))
+            print("avg: " + str(sum(times) / len(times)))
+
+            sorted_times = sorted(times)
+            print("med: " + str(sorted_times[int(len(sorted_times)/2)]))
+
+            for timings in val:
+                output.write(key + "," + str(timings[0]) + "," + str(timings[1]) + "\n")
 
 def collect_data(open_file):
     regex = r"STEP: (.*)"
