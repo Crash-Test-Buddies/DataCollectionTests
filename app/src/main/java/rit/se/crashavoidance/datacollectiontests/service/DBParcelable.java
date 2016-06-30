@@ -90,4 +90,10 @@ public class DBParcelable implements Parcelable {
         });
 
     }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("STEP: " + step +"\n").append(startTime).append("\n").append(endTime);
+        return stringBuilder.toString();
+    }
 }
