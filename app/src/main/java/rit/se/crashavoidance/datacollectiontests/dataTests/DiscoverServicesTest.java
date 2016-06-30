@@ -12,6 +12,8 @@ import android.util.Log;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import edu.rit.se.wifibuddy.WifiDirectHandler;
 import rit.se.crashavoidance.datacollectiontests.service.DBParcelable;
@@ -29,6 +31,7 @@ public class DiscoverServicesTest implements DataTest {
     long endTime;
     public DiscoverServicesTest(Context context){
         this.context = context;
+        Log.i("Tester", "Instantiating");
         wifiConnection = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
@@ -48,7 +51,7 @@ public class DiscoverServicesTest implements DataTest {
 
     }
 
-    public void run(){
+    public void run() {
         Log.i("Tester", "Like ah, starting the test");
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE);
@@ -59,7 +62,6 @@ public class DiscoverServicesTest implements DataTest {
                 // We only need to listen for one intent
                 endTime = new Date().getTime();
                 wifiDirectHandler.stopDiscoveringServices();
-                context.unbindService(wifiConnection);
                 Log.i("Tester", "Like ah, totally sending the parcelable");
                 Log.i("Tester", "longeger");
                 DBParcelable parcelable = new DBParcelable(stepName, startTime, endTime);
@@ -67,6 +69,11 @@ public class DiscoverServicesTest implements DataTest {
                 i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
                 i.putExtra("record", parcelable);
                 ComponentName c = context.startService(i);
+                try {
+                    context.unbindService(wifiConnection);
+                }catch (Exception e){
+                    Log.e("TAG", "Caught exception", e);
+                }
                 LocalBroadcastManager.getInstance(context).unregisterReceiver(this);
             }
         };
@@ -77,22 +84,5 @@ public class DiscoverServicesTest implements DataTest {
         Log.i("Tester", "Binding to the service");
         context.bindService(new Intent(context, WifiDirectHandler.class), wifiConnection, Context.BIND_AUTO_CREATE);
         Log.i("Tester", "Ran...oh noooooo what happened???");
-        while (wifiDirectHandler == null){
-            try {
-                Thread.sleep(5000);
-                Log.i("Tester", "It's null, sleeping");
-            } catch (InterruptedException e) {
-                Log.e("Tester", "Oops", e);
-            }
-        }
-
     }
-
-
-
-
-
-
-
-
 }
