@@ -5,6 +5,7 @@ package rit.se.crashavoidance.datacollectiontests.views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         int testNum = testPicker.getSelectedItemPosition() + 1;
         DataTest theTest = testBuilder.buildTest(testNum, this);
         for (int i = 0; i < numRuns; i++){
+            Log.d("Tester", "looping");
             theTest.run();
         }
     }
