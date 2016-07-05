@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     public void executeTest(final int numRuns){
         if (numRuns == 0) {
             Log.i("Tester", "All tests completed");
+            return;
         }
 
         int testNum = testPicker.getSelectedItemPosition() + 1;
