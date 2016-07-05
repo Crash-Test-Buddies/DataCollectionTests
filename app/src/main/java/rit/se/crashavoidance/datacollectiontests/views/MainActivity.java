@@ -14,6 +14,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import org.jdeferred.DoneCallback;
+import org.jdeferred.Promise;
+import org.jdeferred.impl.DeferredObject;
+
 import edu.rit.se.wifibuddy.WifiDirectHandler;
 import rit.se.crashavoidance.datacollectiontests.R;
 import rit.se.crashavoidance.datacollectiontests.dataTests.DataTest;
@@ -27,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     Spinner testPicker;
     Button runButton;
     TestBuilder testBuilder = new TestBuilder();
+
+    private DataTest persist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +67,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void executeTest(int numRuns){
-        int testNum = testPicker.getSelectedItemPosition() + 1;
-        DataTest theTest = testBuilder.buildTest(testNum, this);
-        for (int i = 0; i < numRuns; i++){
-            Log.d("Tester", "looping");
-            theTest.run();
+    public void executeTest(final int numRuns){
+        if (numRuns == 0) {
+            Log.i("Tester", "All tests completed");
         }
-    }
 
+        int testNum = testPicker.getSelectedItemPosition() + 1;
+        persist = testBuilder.buildTest(testNum, this);
+        Promise promise = persist.getDeferredObject().promise();
+        promise.done(new DoneCallback() {
+            @Override
+            public void onDone(Object result) {
+                Log.i("Tester", "Single test completed");
+                executeTest(numRuns - 1);
+            }
+        });
+        Log.i("Tester", "Running a test");
+        persist.run();
+    }
 }
