@@ -75,7 +75,7 @@ public class DiscoverServicesTest implements DataTest {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            Log.i("Tester", "Disconnected??? whyyyyy");
+            Log.i("Tester", "disconnected from WiFi-Buddy");
             serviceBound = false;
         }
     };
