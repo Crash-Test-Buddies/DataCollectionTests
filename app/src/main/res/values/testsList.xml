@@ -4,6 +4,7 @@
     <string-array name="tests_list">
         <item>Discover Services</item>
         <item>Dummy Test One</item>
+        <item>Connect To Service</item>
     </string-array>
 
 </resources>

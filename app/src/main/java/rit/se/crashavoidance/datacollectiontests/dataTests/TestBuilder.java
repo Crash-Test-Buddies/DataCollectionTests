@@ -18,6 +18,8 @@ public class TestBuilder {
                     break;
             case 2: theTest = new DummyTest1();
                     break;
+            case 3: theTest = new ConnectToServiceTest(context);
+                    break;
         }
 
         return theTest;
