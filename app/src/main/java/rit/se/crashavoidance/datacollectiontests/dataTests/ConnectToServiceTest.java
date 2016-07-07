@@ -37,6 +37,9 @@ public class ConnectToServiceTest implements DataTest {
     public ConnectToServiceTest(Context context) {
         this.context = context;
         deferredObject = new DeferredObject();
+        discover = new DBParcelable.Builder("DiscoverService");
+        connect = new DBParcelable.Builder("ConnectToService");
+        disconnect = new DBParcelable.Builder("DisconnectFromService");
     }
 
     @Override
@@ -44,6 +47,7 @@ public class ConnectToServiceTest implements DataTest {
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE);
         filter.addAction(WifiDirectHandler.Action.SERVICE_CONNECTED);
+        filter.addAction(WifiDirectHandler.Action.COMMUNICATION_DISCONNECTED);
         LocalBroadcastManager.getInstance(context).registerReceiver(receiver, filter);
         /* This binds to the service, which calls continuouslyDiscoverServices
            It needs to be done this way because the call is asynchronous so the logic needs
@@ -63,36 +67,43 @@ public class ConnectToServiceTest implements DataTest {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if(action.equals(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE)) {
-                endTime = new Date().getTime();
-                wifiDirectHandler.stopDiscoveringServices();
+                discover.end();
+                wifiDirectHandler.stopServiceDiscovery();
                 Log.i("Tester", "Service discovered");
-                DBParcelable parcelable = new DBParcelable("DiscoverService", startTime, endTime);
+                DBParcelable parcelable = discover.build();
                 Intent i = new Intent();
                 i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
                 i.putExtra("record", parcelable);
                 ComponentName c = context.startService(i);
                 Log.i("Tester", parcelable.toString());
 
-                //TODO: Reusing a variable like this is a bad practice
-                startTime = new Date().getTime();
+                connect.start();
                 Log.i("Tester", "Initiating connection to service");
                 DnsSdService service = wifiDirectHandler.getDnsSdServiceMap().get(intent.getStringExtra(WifiDirectHandler.SERVICE_MAP_KEY));
                 wifiDirectHandler.initiateConnectToService(service);
 
             } if (action.equals(WifiDirectHandler.Action.SERVICE_CONNECTED)) {
-                //TODO: Reusing a variable like this is a bad practice
-                endTime = new Date().getTime();
-                DBParcelable parcelable = new DBParcelable("ConnectToService", startTime, endTime);
+                connect.end();
+                DBParcelable parcelable = connect.build();
                 Intent i = new Intent();
                 i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
                 i.putExtra("record", parcelable);
                 ComponentName c = context.startService(i);
                 Log.i("Tester", parcelable.toString());
-                wifiDirectHandler.remove
+                disconnect.start();
+                wifiDirectHandler.removeGroup();
+                deferredObject.resolve("Completed Test");
+            } if (action.equals(WifiDirectHandler.Action.COMMUNICATION_DISCONNECTED)) {
+                disconnect.end();
+                DBParcelable parcelable = disconnect.build();
+                Intent i = new Intent();
+                i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
+                i.putExtra("record", parcelable);
+                ComponentName c = context.startService(i);
+                Log.i("Tester", parcelable.toString());
+                LocalBroadcastManager.getInstance(context).unregisterReceiver(this);
                 deferredObject.resolve("Completed Test");
             }
-//            LocalBroadcastManager.getInstance(context).unregisterReceiver(this);
-//            deferredObject.resolve("Completed Test");
         }
     };
 
@@ -102,7 +113,7 @@ public class ConnectToServiceTest implements DataTest {
             WifiDirectHandler.WifiTesterBinder binder = (WifiDirectHandler.WifiTesterBinder) service;
             wifiDirectHandler = binder.getService();
             // Test calls must go below here or in the broadcast receiver
-            startTime = new Date().getTime();
+            discover.start();
             wifiDirectHandler.continuouslyDiscoverServices();
             Log.i("Tester", " Device info: " + wifiDirectHandler.getThisDeviceInfo());
         }

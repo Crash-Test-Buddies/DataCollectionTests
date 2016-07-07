@@ -99,7 +99,7 @@ public class DBParcelable implements Parcelable {
         return stringBuilder.toString();
     }
 
-    public class Builder {
+    public static class Builder {
 
         private String step;
         private long startTime;
