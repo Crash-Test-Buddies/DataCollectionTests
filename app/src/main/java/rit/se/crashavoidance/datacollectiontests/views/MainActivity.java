@@ -2,26 +2,21 @@ package rit.se.crashavoidance.datacollectiontests.views;
 
 
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.view.View.OnClickListener;
 
 import org.jdeferred.DoneCallback;
 import org.jdeferred.Promise;
-import org.jdeferred.impl.DeferredObject;
 
-import edu.rit.se.wifibuddy.WifiDirectHandler;
 import rit.se.crashavoidance.datacollectiontests.R;
 import rit.se.crashavoidance.datacollectiontests.dataTests.DataTest;
-import rit.se.crashavoidance.datacollectiontests.dataTests.DummyTest1;
 import rit.se.crashavoidance.datacollectiontests.dataTests.TestBuilder;
 
 
@@ -39,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize ActionBar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.mainToolbar);
+        setSupportActionBar(toolbar);
+
         testPicker = (Spinner) findViewById(R.id.spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         testPicker.setAdapter(adapter);
-
 
         numberPicker = (NumberPicker) findViewById(R.id.numberpicker);
         numberPicker.setMaxValue(100);
