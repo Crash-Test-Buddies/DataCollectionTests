@@ -13,7 +13,7 @@ def analyze(file_name):
     f = open(file_name)
     data = collect_data(f)
     with open("output.csv", "w") as output:
-        output.write("step,start,end\n")
+        output.write("Step,Test #,Start Time,End Time,Duration\n")
         for key, val in data.items():
             print("STEP: " + key)
             print("iterations: " + str(len(val)))
@@ -26,8 +26,11 @@ def analyze(file_name):
             sorted_times = sorted(times)
             print("med: " + str(sorted_times[int(len(sorted_times)/2)]))
 
+            index = 0
             for timings in val:
-                output.write(key + "," + str(timings[0]) + "," + str(timings[1]) + "\n")
+                index = index + 1
+                duration = timings[1] - timings[0]
+                output.write(key + "," + str(index) + "," + str(timings[0]) + "," + str(timings[1]) + "," + str(duration) + "\n")
 
 def collect_data(open_file):
     regex = r"STEP: (.*)"
