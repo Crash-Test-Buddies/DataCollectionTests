@@ -23,6 +23,8 @@ import rit.se.crashavoidance.datacollectiontests.service.DBParcelable;
  */
 public class ConnectToServiceTest implements DataTest {
 
+    public static final String SERVICE_NAME = "WifiBuddyTestService";
+
     private final static String stepName = "ConnectToService";
 
     private WifiDirectHandler wifiDirectHandler;
@@ -67,21 +69,22 @@ public class ConnectToServiceTest implements DataTest {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if(action.equals(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE)) {
-                discover.end();
-                wifiDirectHandler.stopServiceDiscovery();
-                Log.i("Tester", "Service discovered");
-                DBParcelable parcelable = discover.build();
-                Intent i = new Intent();
-                i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
-                i.putExtra("record", parcelable);
-                ComponentName c = context.startService(i);
-                Log.i("Tester", parcelable.toString());
-
-                connect.start();
-                Log.i("Tester", "Initiating connection to service");
                 DnsSdService service = wifiDirectHandler.getDnsSdServiceMap().get(intent.getStringExtra(WifiDirectHandler.SERVICE_MAP_KEY));
-                wifiDirectHandler.initiateConnectToService(service);
+                if(SERVICE_NAME.equals(service.getInstanceName())) {
+                    discover.end();
+                    wifiDirectHandler.stopServiceDiscovery();
+                    Log.i("Tester", "Service discovered");
+                    DBParcelable parcelable = discover.build();
+                    Intent i = new Intent();
+                    i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
+                    i.putExtra("record", parcelable);
+                    ComponentName c = context.startService(i);
+                    Log.i("Tester", parcelable.toString());
 
+                    connect.start();
+                    Log.i("Tester", "Initiating connection to service");
+                    wifiDirectHandler.initiateConnectToService(service);
+                }
             } if (action.equals(WifiDirectHandler.Action.SERVICE_CONNECTED)) {
                 connect.end();
                 DBParcelable parcelable = connect.build();
