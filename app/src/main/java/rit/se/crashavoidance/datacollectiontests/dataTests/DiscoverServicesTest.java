@@ -29,20 +29,19 @@ public class DiscoverServicesTest implements DataTest {
     WifiDirectHandler wifiDirectHandler;
     Context context;
     final String stepName = "DiscoverService";
-    long startTime;
-    long endTime;
     boolean serviceBound = false;
     private DeferredObject deferredObject;
+    private DBParcelable.Builder discover;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         // We only need to listen for one intent
         @Override
         public void onReceive(Context context, Intent intent) {
             // We only need to listen for one intent
-            endTime = new Date().getTime();
-            wifiDirectHandler.stopDiscoveringServices();
+            discover.end();
+            wifiDirectHandler.stopServiceDiscovery();
             Log.i("Tester", "Service discovered");
-            DBParcelable parcelable = new DBParcelable(stepName, startTime, endTime);
+            DBParcelable parcelable = discover.build();
             Intent i = new Intent();
             i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
             i.putExtra("record", parcelable);
@@ -68,7 +67,7 @@ public class DiscoverServicesTest implements DataTest {
             wifiDirectHandler = binder.getService();
             serviceBound = true;
             // Test calls must go in here
-            startTime = new Date().getTime();
+            discover.start();
             wifiDirectHandler.continuouslyDiscoverServices();
             Log.i("Tester", " Device info: " + wifiDirectHandler.getThisDeviceInfo());
         }
@@ -83,6 +82,7 @@ public class DiscoverServicesTest implements DataTest {
     public DiscoverServicesTest(Context context){
         this.context = context;
         this.deferredObject = new DeferredObject();
+        this.discover = new DBParcelable.Builder(stepName);
         Log.i("Tester", "Instantiating");
     }
 

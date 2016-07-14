@@ -3,6 +3,8 @@ package rit.se.crashavoidance.datacollectiontests.service;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Date;
+
 /**
  * Created by Chris on 6/19/2016.
  */
@@ -37,7 +39,7 @@ public class DBParcelable implements Parcelable {
 
     private long endTime; // End time of step
 
-    public DBParcelable(String step, long startTime, long endTime){
+    private DBParcelable(String step, long startTime, long endTime){
         this.step = step;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -95,5 +97,28 @@ public class DBParcelable implements Parcelable {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("STEP: " + step +"\n").append(startTime).append("\n").append(endTime);
         return stringBuilder.toString();
+    }
+
+    public static class Builder {
+
+        private String step;
+        private long startTime;
+        private long endTime;
+
+        public Builder(String stepName) {
+            this.step = stepName;
+        }
+
+        public void start() {
+            this.startTime = new Date().getTime();
+        }
+
+        public void end() {
+            this.endTime = new Date().getTime();
+        }
+
+        public DBParcelable build() {
+            return new DBParcelable(this.step, this.startTime, this.endTime);
+        }
     }
 }
