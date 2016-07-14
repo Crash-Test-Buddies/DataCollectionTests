@@ -16,7 +16,7 @@ public class TestBuilder {
         switch (testID){
             case 1: theTest = new DiscoverServicesTest(context);
                     break;
-            case 2: theTest = new DummyTest1();
+            case 2: theTest = new DummyTest1(context);
                     break;
         }
 

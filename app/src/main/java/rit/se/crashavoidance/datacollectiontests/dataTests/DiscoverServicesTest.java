@@ -20,6 +20,8 @@ import java.util.concurrent.Executors;
 
 import edu.rit.se.wifibuddy.WifiDirectHandler;
 import rit.se.crashavoidance.datacollectiontests.service.DBParcelable;
+import rit.se.crashavoidance.datacollectiontests.service.IntentBridge;
+import rit.se.crashavoidance.datacollectiontests.views.MainActivity;
 
 /**
  * Created by Dan on 6/28/2016.
@@ -42,11 +44,14 @@ public class DiscoverServicesTest implements DataTest {
             endTime = new Date().getTime();
             wifiDirectHandler.stopDiscoveringServices();
             Log.i("Tester", "Service discovered");
+
             DBParcelable parcelable = new DBParcelable(stepName, startTime, endTime);
             Intent i = new Intent();
             i.setComponent(new ComponentName("rit.se.crashavoidance.datacollector", "rit.se.crashavoidance.datacollector.DBHandlerService"));
             i.putExtra("record", parcelable);
             ComponentName c = context.startService(i);
+
+
             Log.i("Tester", parcelable.toString());
             if(serviceBound) {
                 try {

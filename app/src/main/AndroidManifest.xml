@@ -16,12 +16,21 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <!-- Wi-Fi Buddy -->
         <service android:name="edu.rit.se.wifibuddy.WifiDirectHandler" />
+
+        <service android:name="crashavoidance.se.rit.datacollector.service.DBHandlerService"
+            android:exported="false" android:process=":services" >
+            <intent-filter>
+                <!-- Start/Stop service -->
+                <action android:name="crashavoidance.se.rit.datacollector.service.START_SERVICE" />
+            </intent-filter>
+        </service>
 
     </application>
 
