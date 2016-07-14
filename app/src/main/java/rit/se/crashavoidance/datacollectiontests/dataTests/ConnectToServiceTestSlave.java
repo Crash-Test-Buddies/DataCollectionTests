@@ -12,6 +12,8 @@ import android.util.Log;
 
 import org.jdeferred.impl.DeferredObject;
 
+import java.util.HashMap;
+
 import edu.rit.se.wifibuddy.WifiDirectHandler;
 
 import static rit.se.crashavoidance.datacollectiontests.dataTests.ConnectToServiceTest.SERVICE_NAME;
@@ -50,7 +52,8 @@ public class ConnectToServiceTestSlave implements DataTest {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if(action.equals(WifiDirectHandler.COMMUNICATION_DISCONNECTED)) {
-//                wifiDirectHandler
+                wifiDirectHandler.addLocalService("Wi-Fi Buddy", new HashMap<String, String>());
+                Log.i("Tester", "Added p2p service");
             }
         }
     };
@@ -60,9 +63,10 @@ public class ConnectToServiceTestSlave implements DataTest {
         public void onServiceConnected(ComponentName name, IBinder service) {
             WifiDirectHandler.WifiTesterBinder binder = (WifiDirectHandler.WifiTesterBinder) service;
             wifiDirectHandler = binder.getService();
+            Log.i("Tester", "service bound");
             // Test calls must go below here or in the broadcast receiver
-            wifiDirectHandler.addLocalService(ConnectToServiceTest.SERVICE_NAME, null);
-            Log.i("Tester", " Device info: " + wifiDirectHandler.getThisDeviceInfo());
+            wifiDirectHandler.addLocalService("Wi-Fi Buddy", new HashMap<String, String>());
+            Log.i("Tester", "Added p2p service");
         }
 
         @Override

@@ -5,6 +5,7 @@
         <item>Discover Services</item>
         <item>Dummy Test One</item>
         <item>Connect To Service</item>
+        <item>Connect To Service Slave</item>
     </string-array>
 
 </resources>
