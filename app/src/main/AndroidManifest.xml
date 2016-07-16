@@ -19,6 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".views.AndroidDatabaseManager"
+            android:label="AndroidDatabaseManager"
+            android:parentActivityName="views.MainActivity">
+        </activity>
+
 
         <!-- Wi-Fi Buddy -->
         <service android:name="edu.rit.se.wifibuddy.WifiDirectHandler" />
