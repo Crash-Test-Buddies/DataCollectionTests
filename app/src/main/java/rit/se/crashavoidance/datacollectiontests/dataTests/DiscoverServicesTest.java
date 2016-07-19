@@ -86,7 +86,8 @@ public class DiscoverServicesTest implements DataTest {
         Log.i("Tester", "Instantiating");
     }
 
-    public void run() {
+    @Override
+    public void run(WifiDirectHandler wifiDirectHandler) {
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE);
         LocalBroadcastManager.getInstance(context).registerReceiver(receiver, filter);
@@ -100,5 +101,15 @@ public class DiscoverServicesTest implements DataTest {
     @Override
     public DeferredObject getDeferredObject() {
         return deferredObject;
+    }
+
+    @Override
+    public void cleanUp() {
+
+    }
+
+    @Override
+    public void handleIntent(Intent intent) {
+
     }
 }

@@ -45,7 +45,7 @@ public class ConnectToServiceTest implements DataTest {
     }
 
     @Override
-    public void run() {
+    public void run(WifiDirectHandler wifiDirectHandler) {
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE);
         filter.addAction(WifiDirectHandler.Action.SERVICE_CONNECTED);
@@ -61,6 +61,16 @@ public class ConnectToServiceTest implements DataTest {
     @Override
     public DeferredObject getDeferredObject() {
         return deferredObject;
+    }
+
+    @Override
+    public void cleanUp() {
+
+    }
+
+    @Override
+    public void handleIntent(Intent intent) {
+
     }
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
