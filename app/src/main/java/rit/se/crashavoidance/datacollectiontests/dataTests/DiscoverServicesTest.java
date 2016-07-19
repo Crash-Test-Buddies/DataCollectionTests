@@ -19,6 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import edu.rit.se.wifibuddy.WifiDirectHandler;
+import rit.se.crashavoidance.datacollectiontests.persistence.WifiDirectDBHelper;
 import rit.se.crashavoidance.datacollectiontests.service.DBParcelable;
 
 /**
@@ -26,6 +27,7 @@ import rit.se.crashavoidance.datacollectiontests.service.DBParcelable;
  */
 public class DiscoverServicesTest implements DataTest {
 
+    private WifiDirectDBHelper helper;
     WifiDirectHandler wifiDirectHandler;
     Context context;
     final String stepName = "DiscoverService";
@@ -47,6 +49,7 @@ public class DiscoverServicesTest implements DataTest {
             i.putExtra("record", parcelable);
             ComponentName c = context.startService(i);
             Log.i("Tester", parcelable.toString());
+            helper.insertStepTimerRecord(parcelable);
             if(serviceBound) {
                 try {
                     context.unbindService(wifiConnection);
@@ -79,7 +82,8 @@ public class DiscoverServicesTest implements DataTest {
         }
     };
 
-    public DiscoverServicesTest(Context context){
+    public DiscoverServicesTest(Context context, WifiDirectDBHelper helper){
+        this.helper = helper;
         this.context = context;
         this.deferredObject = new DeferredObject();
         this.discover = new DBParcelable.Builder(stepName);

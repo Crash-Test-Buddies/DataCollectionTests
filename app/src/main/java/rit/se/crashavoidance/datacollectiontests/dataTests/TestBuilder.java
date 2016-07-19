@@ -18,7 +18,7 @@ public class TestBuilder {
         DataTest theTest = null;
 
         switch (testID){
-            case 1: theTest = new DiscoverServicesTest(context);
+            case 1: theTest = new DiscoverServicesTest(context, helper);
                     break;
             case 2: theTest = new DummyTest1(helper);
                     break;
