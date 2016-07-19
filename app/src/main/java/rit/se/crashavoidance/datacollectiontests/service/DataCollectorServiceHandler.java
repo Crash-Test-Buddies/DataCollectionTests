@@ -122,7 +122,6 @@ public class DataCollectorServiceHandler {
     private JSONArray getStepTimerRecords(ArrayList<Long> idsToDelete) throws JSONException, InterruptedException {
         Cursor stepTimerRecs = dbHelper.getStepBatch(Integer.toString(BATCHLIMIT));
         Log.i(TAG, "StepTimerRecs: " + stepTimerRecs.getCount());
-        Thread.sleep(1000);
         JSONArray stepTimerObjects = new JSONArray();
         while (stepTimerRecs.moveToNext()){
             JSONObject stepTimerObject = new JSONObject();
