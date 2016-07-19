@@ -32,6 +32,7 @@ public class ConnectToServiceTestSlave implements DataTest {
 
     @Override
     public void run(WifiDirectHandler wifiDirectHandler) {
+        this.wifiDirectHandler = wifiDirectHandler;
         wifiDirectHandler.addLocalService("Wi-Fi Buddy", new HashMap<String, String>());
         Log.i("Tester", "Added p2p service");
     }

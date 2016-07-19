@@ -98,6 +98,29 @@ public class MainActivity extends AppCompatActivity implements WifiBuddyAccessor
         return wifiDirectHandler;
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("Tester", "Pausing MainActivity");
+        if (wifiBuddyBound) {
+            Log.i("Tester", "WifiDirectHandler service unbound");
+            unbindService(wifiConnection);
+            wifiBuddyBound = false;
+        }
+        Log.i("Tester", "MainActivity paused");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("Tester", "Resuming MainActivity");
+        Intent intent = new Intent(this, WifiDirectHandler.class);
+        if(!wifiBuddyBound) {
+            bindService(intent, wifiConnection, BIND_AUTO_CREATE);
+        }
+        Log.i("Tester", "MainActivity resumed");
+    }
+
     private void registerBroadcastReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiDirectHandler.Action.COMMUNICATION_DISCONNECTED);

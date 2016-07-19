@@ -44,6 +44,7 @@ public class ConnectToServiceTest implements DataTest {
 
     @Override
     public void run(WifiDirectHandler wifiDirectHandler) {
+        this.wifiDirectHandler = wifiDirectHandler;
         discover.start();
         wifiDirectHandler.continuouslyDiscoverServices();
         Log.i("Tester", " Device info: " + wifiDirectHandler.getThisDeviceInfo());
@@ -64,7 +65,8 @@ public class ConnectToServiceTest implements DataTest {
         String action = intent.getAction();
         if(action.equals(WifiDirectHandler.Action.DNS_SD_SERVICE_AVAILABLE)) {
             DnsSdService service = wifiDirectHandler.getDnsSdServiceMap().get(intent.getStringExtra(WifiDirectHandler.SERVICE_MAP_KEY));
-            if(SERVICE_NAME.equals(service.getInstanceName())) {
+            Log.i("Tester", "" + intent.getStringExtra(WifiDirectHandler.SERVICE_MAP_KEY));
+            if(true/*SERVICE_NAME.equals(service.getInstanceName())*/) {
                 discover.end();
                 wifiDirectHandler.stopServiceDiscovery();
                 Log.i("Tester", "Service discovered");
@@ -87,9 +89,10 @@ public class ConnectToServiceTest implements DataTest {
             i.putExtra("record", parcelable);
             ComponentName c = context.startService(i);
             Log.i("Tester", parcelable.toString());
+            Log.i("Tester", "Beginning disconnect");
             disconnect.start();
             wifiDirectHandler.removeGroup();
-            deferredObject.resolve("Completed Test");
+            wifiDirectHandler.getCommunicationManager().write("work?".getBytes());
         } if (action.equals(WifiDirectHandler.Action.COMMUNICATION_DISCONNECTED)) {
             disconnect.end();
             DBParcelable parcelable = disconnect.build();

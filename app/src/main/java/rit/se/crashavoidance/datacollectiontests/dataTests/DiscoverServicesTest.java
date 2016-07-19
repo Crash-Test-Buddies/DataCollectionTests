@@ -42,6 +42,7 @@ public class DiscoverServicesTest implements DataTest {
 
     @Override
     public void run(WifiDirectHandler wifiDirectHandler) {
+        this.wifiDirectHandler = wifiDirectHandler;
         discover.start();
         wifiDirectHandler.continuouslyDiscoverServices();
         Log.i("Tester", " Device info: " + wifiDirectHandler.getThisDeviceInfo());
@@ -54,7 +55,7 @@ public class DiscoverServicesTest implements DataTest {
 
     @Override
     public void cleanUp() {
-
+        wifiDirectHandler.stopServiceDiscovery();
     }
 
     @Override
