@@ -45,4 +45,20 @@
         android:id="@+id/runbutton"
         android:paddingTop="10px" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Database"
+        android:onClick="viewDatabase"
+        android:id="@+id/database" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post"
+        android:onClick="post"
+        android:id="@+id/post" />
+
 </LinearLayout>

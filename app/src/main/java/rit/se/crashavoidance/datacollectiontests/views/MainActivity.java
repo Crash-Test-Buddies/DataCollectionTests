@@ -2,6 +2,8 @@ package rit.se.crashavoidance.datacollectiontests.views;
 
 
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.jdeferred.DoneCallback;
 import org.jdeferred.Promise;
@@ -18,6 +21,7 @@ import org.jdeferred.Promise;
 import rit.se.crashavoidance.datacollectiontests.R;
 import rit.se.crashavoidance.datacollectiontests.dataTests.DataTest;
 import rit.se.crashavoidance.datacollectiontests.dataTests.TestBuilder;
+import rit.se.crashavoidance.datacollectiontests.service.DataCollectorServiceHandler;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     Spinner testPicker;
     Button runButton;
     TestBuilder testBuilder = new TestBuilder();
+    private static final String TAG = "DataCollector";
+    DataCollectorServiceHandler handler = new DataCollectorServiceHandler(this);
 
     private DataTest persist;
 
@@ -61,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public void executeTest(final int numRuns){
         if (numRuns == 0) {
             Log.i("Tester", "All tests completed");
@@ -79,5 +86,38 @@ public class MainActivity extends AppCompatActivity {
         });
         Log.i("Tester", "Running a test");
         persist.run();
+    }
+
+    public void viewDatabase(View v){
+        Intent dbmanager = new Intent(this,AndroidDatabaseManager.class);
+        startActivity(dbmanager);
+    }
+
+    public void post(View view) {
+        if(!handler.isConnected())
+            Toast.makeText(getBaseContext(), "Need internet connection to run this", Toast.LENGTH_LONG).show();
+        else
+            // call AsynTask to perform network operation on separate thread
+            new HttpAsyncTask().execute();
+    }
+
+    private class HttpAsyncTask extends AsyncTask<String, Void, String> {
+        String result = "";
+        @Override
+        protected String doInBackground(String... Params) {
+            try {
+                result = handler.POST();
+            } catch (Exception e) {
+                result = e.getMessage() + " Check log for details";
+                Log.e(TAG, "Issue calling REST service", e);
+            }
+            return result;
+        }
+
+        // onPostExecute displays the results of the AsyncTask.
+        @Override
+        protected void onPostExecute(String result) {
+            Toast.makeText(getBaseContext(), "Result: " + result, Toast.LENGTH_LONG).show();
+        }
     }
 }
