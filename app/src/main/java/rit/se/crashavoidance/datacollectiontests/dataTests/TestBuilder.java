@@ -20,7 +20,7 @@ public class TestBuilder {
                     break;
             case 3: theTest = new ConnectToServiceTest(context);
                     break;
-            case 4: theTest = new ConnectToServiceTestSlave(context);
+            case 4: theTest = new ConnectToServiceTestSlave();
                     break;
         }
 
