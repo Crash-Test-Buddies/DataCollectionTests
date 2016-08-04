@@ -1,0 +1,300 @@
+08-04 08:26:39.813 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313596003
+                                                                                 1470313599809
+08-04 08:26:40.488 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313599886
+                                                                                 1470313600486
+08-04 08:26:41.775 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313600515
+                                                                                 1470313601773
+08-04 08:26:42.428 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313601790
+                                                                                 1470313602426
+08-04 08:26:43.114 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313602447
+                                                                                 1470313603112
+08-04 08:26:44.076 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313603143
+                                                                                 1470313604074
+08-04 08:26:45.686 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313604094
+                                                                                 1470313605685
+08-04 08:26:46.321 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313605702
+                                                                                 1470313606319
+08-04 08:26:46.964 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313606360
+                                                                                 1470313606962
+08-04 08:26:47.581 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313606982
+                                                                                 1470313607580
+08-04 08:26:48.153 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313607600
+                                                                                 1470313608151
+08-04 08:26:49.724 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313608172
+                                                                                 1470313609722
+08-04 08:26:50.239 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313609759
+                                                                                 1470313610238
+08-04 08:26:51.252 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313610276
+                                                                                 1470313611251
+08-04 08:26:52.286 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313611271
+                                                                                 1470313612285
+08-04 08:26:52.309 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313612306
+                                                                                 1470313612307
+08-04 08:26:53.587 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313612332
+                                                                                 1470313613585
+08-04 08:26:54.231 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313613626
+                                                                                 1470313614229
+08-04 08:26:56.927 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313614251
+                                                                                 1470313616926
+08-04 08:26:57.680 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313616975
+                                                                                 1470313617678
+08-04 08:26:58.325 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313617723
+                                                                                 1470313618323
+08-04 08:27:00.177 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313618344
+                                                                                 1470313620175
+08-04 08:27:01.098 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313620193
+                                                                                 1470313621096
+08-04 08:27:02.391 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313621113
+                                                                                 1470313622389
+08-04 08:27:02.975 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313622437
+                                                                                 1470313622974
+08-04 08:27:05.270 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313623003
+                                                                                 1470313625268
+08-04 08:27:05.780 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313625316
+                                                                                 1470313625779
+08-04 08:27:10.280 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313625800
+                                                                                 1470313630278
+08-04 08:27:12.819 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313630315
+                                                                                 1470313632812
+08-04 08:27:13.378 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313632848
+                                                                                 1470313633376
+08-04 08:27:14.545 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313633416
+                                                                                 1470313634544
+08-04 08:27:15.125 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313634563
+                                                                                 1470313635123
+08-04 08:27:16.174 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313635146
+                                                                                 1470313636173
+08-04 08:27:17.576 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313636200
+                                                                                 1470313637575
+08-04 08:27:18.578 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313637593
+                                                                                 1470313638577
+08-04 08:27:18.632 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313638607
+                                                                                 1470313638624
+08-04 08:27:20.444 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313638673
+                                                                                 1470313640443
+08-04 08:27:21.473 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313640465
+                                                                                 1470313641471
+08-04 08:27:22.394 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313641524
+                                                                                 1470313642393
+08-04 08:27:23.783 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313642414
+                                                                                 1470313643781
+08-04 08:27:25.902 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313643830
+                                                                                 1470313645900
+08-04 08:27:26.649 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313645949
+                                                                                 1470313646647
+08-04 08:27:27.306 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313646682
+                                                                                 1470313647305
+08-04 08:27:27.994 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313647330
+                                                                                 1470313647993
+08-04 08:27:29.921 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313648020
+                                                                                 1470313649920
+08-04 08:27:31.304 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313649949
+                                                                                 1470313651303
+08-04 08:27:32.578 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313651356
+                                                                                 1470313652577
+08-04 08:27:35.285 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313652598
+                                                                                 1470313655283
+08-04 08:27:36.437 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313655320
+                                                                                 1470313656435
+08-04 08:27:37.683 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313656454
+                                                                                 1470313657681
+08-04 08:27:38.248 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313657709
+                                                                                 1470313658247
+08-04 08:27:39.625 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313658277
+                                                                                 1470313659623
+08-04 08:27:42.027 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313659644
+                                                                                 1470313662023
+08-04 08:27:42.676 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313662053
+                                                                                 1470313662674
+08-04 08:27:44.105 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313662696
+                                                                                 1470313664104
+08-04 08:27:45.418 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313664138
+                                                                                 1470313665416
+08-04 08:27:46.175 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313665432
+                                                                                 1470313666174
+08-04 08:27:46.780 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313666200
+                                                                                 1470313666778
+08-04 08:27:50.483 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313666814
+                                                                                 1470313670481
+08-04 08:27:51.213 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313670532
+                                                                                 1470313671211
+08-04 08:27:51.955 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313671231
+                                                                                 1470313671953
+08-04 08:27:52.666 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313671973
+                                                                                 1470313672664
+08-04 08:27:54.470 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313672709
+                                                                                 1470313674468
+08-04 08:27:55.070 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313674497
+                                                                                 1470313675068
+08-04 08:27:56.967 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313675093
+                                                                                 1470313676966
+08-04 08:27:56.986 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313676984
+                                                                                 1470313676985
+08-04 08:27:58.644 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313677002
+                                                                                 1470313678641
+08-04 08:27:59.288 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313678673
+                                                                                 1470313679285
+08-04 08:28:00.688 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313679332
+                                                                                 1470313680687
+08-04 08:28:01.911 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313680712
+                                                                                 1470313681910
+08-04 08:28:02.537 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313681940
+                                                                                 1470313682536
+08-04 08:28:03.495 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313682561
+                                                                                 1470313683494
+08-04 08:28:03.514 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313683512
+                                                                                 1470313683512
+08-04 08:28:06.700 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313683531
+                                                                                 1470313686699
+08-04 08:28:08.304 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313686733
+                                                                                 1470313688302
+08-04 08:28:09.383 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313688323
+                                                                                 1470313689382
+08-04 08:28:09.448 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313689428
+                                                                                 1470313689441
+08-04 08:28:10.176 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313689487
+                                                                                 1470313690175
+08-04 08:28:10.694 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313690196
+                                                                                 1470313690692
+08-04 08:28:12.838 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313690708
+                                                                                 1470313692835
+08-04 08:28:15.691 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313692872
+                                                                                 1470313695690
+08-04 08:28:16.258 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313695729
+                                                                                 1470313696256
+08-04 08:28:17.208 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313696271
+                                                                                 1470313697207
+08-04 08:28:18.106 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313697230
+                                                                                 1470313698100
+08-04 08:28:18.830 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313698136
+                                                                                 1470313698828
+08-04 08:28:19.434 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313698860
+                                                                                 1470313699432
+08-04 08:28:22.985 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313699466
+                                                                                 1470313702983
+08-04 08:28:23.057 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313703038
+                                                                                 1470313703051
+08-04 08:28:23.516 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313703089
+                                                                                 1470313703514
+08-04 08:28:24.068 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313703537
+                                                                                 1470313704066
+08-04 08:28:29.310 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313704087
+                                                                                 1470313709308
+08-04 08:28:29.855 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313709353
+                                                                                 1470313709852
+08-04 08:28:30.976 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313709896
+                                                                                 1470313710975
+08-04 08:28:31.521 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313710992
+                                                                                 1470313711520
+08-04 08:28:32.101 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313711539
+                                                                                 1470313712100
+08-04 08:28:32.610 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313712128
+                                                                                 1470313712608
+08-04 08:28:33.144 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313712628
+                                                                                 1470313713142
+08-04 08:28:33.664 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313713165
+                                                                                 1470313713662
+08-04 08:28:34.184 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313713683
+                                                                                 1470313714180
+08-04 08:28:36.642 2799-2799/rit.se.crashavoidance.datacollectiontests I/Tester: STEP: DiscoverService
+                                                                                 1470313714209
+                                                                                 1470313716640
